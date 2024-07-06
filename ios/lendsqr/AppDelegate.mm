@@ -28,6 +28,7 @@
 - (NSURL *)bundleURL
 {
 #if DEBUG
+  // return [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index"];
   return [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index"];
 #else
   return [CodePush bundleURL];
