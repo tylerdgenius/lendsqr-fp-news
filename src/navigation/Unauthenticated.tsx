@@ -5,12 +5,12 @@ import {Stack} from './lib';
 const Unauthenticated = () => {
   return (
     <Stack.Navigator
-      initialRouteName="LoginScreen"
+      initialRouteName="SignupOneScreen"
       screenOptions={{
         headerShown: false,
       }}>
+      <Stack.Screen name="SignupOneScreen" component={Screens.SignupOne} />
       <Stack.Screen name="LoginScreen" component={Screens.Login} />
-      <Stack.Screen name="SignupScreen" component={Screens.Signup} />
     </Stack.Navigator>
   );
 };

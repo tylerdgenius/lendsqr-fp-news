@@ -1,11 +1,11 @@
 import Login from './Login';
 import NewsDetails from './NewsDetails';
 import NewsList from './NewsList';
-import Signup from './Signup';
+import SignupOne from './SignupOne';
 
 export default {
   NewsList,
   Login,
-  Signup,
+  SignupOne,
   NewsDetails,
 };

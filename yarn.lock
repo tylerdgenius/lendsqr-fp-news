@@ -2377,6 +2377,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@react-native-firebase/crashlytics@npm:^20.1.0":
+  version: 20.1.0
+  resolution: "@react-native-firebase/crashlytics@npm:20.1.0"
+  dependencies:
+    stacktrace-js: ^2.0.2
+  peerDependencies:
+    "@react-native-firebase/app": 20.1.0
+    expo: ">=47.0.0"
+  peerDependenciesMeta:
+    expo:
+      optional: true
+  checksum: 4c87966fee752c244b4b4a976fdaa42649523c3ac3280020aaa8834a01cef48a1866de2778a80968c467c8e468c5543dc5cb39500023e6f99fcc34a2c767691f
+  languageName: node
+  linkType: hard
+
 "@react-native-firebase/firestore@npm:^20.1.0":
   version: 20.1.0
   resolution: "@react-native-firebase/firestore@npm:20.1.0"
@@ -7180,6 +7195,7 @@ __metadata:
     "@react-native-firebase/analytics": ^20.1.0
     "@react-native-firebase/app": ^20.1.0
     "@react-native-firebase/auth": ^20.1.0
+    "@react-native-firebase/crashlytics": ^20.1.0
     "@react-native-firebase/firestore": ^20.1.0
     "@react-native/babel-preset": 0.74.85
     "@react-native/eslint-config": 0.74.85
@@ -7199,6 +7215,8 @@ __metadata:
     react: 18.2.0
     react-native: 0.74.3
     react-native-code-push: ^8.2.2
+    react-native-google-signin: ^2.1.1
+    react-native-responsive-fontsize: ^0.5.1
     react-native-safe-area-context: ^4.10.7
     react-native-screens: ^3.32.0
     react-native-vector-icons: ^10.1.0
@@ -8741,6 +8759,37 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-native-google-signin@npm:^2.1.1":
+  version: 2.1.1
+  resolution: "react-native-google-signin@npm:2.1.1"
+  peerDependencies:
+    prop-types: ^15.5.10
+    react: ">=15.4.0 || ^16.0.0-alpha"
+    react-native: ">=0.40"
+  checksum: 446e5014eef9fa87d206b1d69fa603fd73c564f613df3ef92aca10d645142e423cbdbc5e3acd9323ac2887f91283f463574eeef1150004ac2ac7f922b48e8522
+  languageName: node
+  linkType: hard
+
+"react-native-iphone-x-helper@npm:^1.3.1":
+  version: 1.3.1
+  resolution: "react-native-iphone-x-helper@npm:1.3.1"
+  peerDependencies:
+    react-native: ">=0.42.0"
+  checksum: 024376646009a966e33e12fc2358751830818b0fb73b1c601a64eb5e490d2dc43eec23668991b985a8c412a84d087f20eb45bb9b593567c08b66e741b7bddda5
+  languageName: node
+  linkType: hard
+
+"react-native-responsive-fontsize@npm:^0.5.1":
+  version: 0.5.1
+  resolution: "react-native-responsive-fontsize@npm:0.5.1"
+  dependencies:
+    react-native-iphone-x-helper: ^1.3.1
+  peerDependencies:
+    react-native: ">=0.42.0"
+  checksum: d24a4f46a439b391a6df06e4e25395703aabefa822250cf034c1f0543d52939e540d0a7d2862e39da81699b228aa19187314fdf08832697b24e0806c48055fd7
+  languageName: node
+  linkType: hard
+
 "react-native-safe-area-context@npm:^4.10.7":
   version: 4.10.7
   resolution: "react-native-safe-area-context@npm:4.10.7"
@@ -9574,6 +9623,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"source-map@npm:0.5.6":
+  version: 0.5.6
+  resolution: "source-map@npm:0.5.6"
+  checksum: 390b3f5165c9631a74fb6fb55ba61e62a7f9b7d4026ae0e2bfc2899c241d71c1bccb8731c496dc7f7cb79a5f523406eb03d8c5bebe8448ee3fc38168e2d209c8
+  languageName: node
+  linkType: hard
+
 "source-map@npm:^0.5.6":
   version: 0.5.7
   resolution: "source-map@npm:0.5.7"
@@ -9625,6 +9681,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"stack-generator@npm:^2.0.5":
+  version: 2.0.10
+  resolution: "stack-generator@npm:2.0.10"
+  dependencies:
+    stackframe: ^1.3.4
+  checksum: 4fc3978a934424218a0aa9f398034e1f78153d5ff4f4ff9c62478c672debb47dd58de05b09fc3900530cbb526d72c93a6e6c9353bacc698e3b1c00ca3dda0c47
+  languageName: node
+  linkType: hard
+
 "stack-utils@npm:^2.0.3":
   version: 2.0.6
   resolution: "stack-utils@npm:2.0.6"
@@ -9638,6 +9703,27 @@ __metadata:
   version: 1.3.4
   resolution: "stackframe@npm:1.3.4"
   checksum: bae1596873595c4610993fa84f86a3387d67586401c1816ea048c0196800c0646c4d2da98c2ee80557fd9eff05877efe33b91ba6cd052658ed96ddc85d19067d
+  languageName: node
+  linkType: hard
+
+"stacktrace-gps@npm:^3.0.4":
+  version: 3.1.2
+  resolution: "stacktrace-gps@npm:3.1.2"
+  dependencies:
+    source-map: 0.5.6
+    stackframe: ^1.3.4
+  checksum: 85daa232d138239b6ae0f4bcdd87d15d302a045d93625db17614030945b5314e204b5fbcf9bee5b6f4f9e6af5fca05f65c27fe910894b861ef6853b99470aa1c
+  languageName: node
+  linkType: hard
+
+"stacktrace-js@npm:^2.0.2":
+  version: 2.0.2
+  resolution: "stacktrace-js@npm:2.0.2"
+  dependencies:
+    error-stack-parser: ^2.0.6
+    stack-generator: ^2.0.5
+    stacktrace-gps: ^3.0.4
+  checksum: 081e786d56188ac04ac6604c09cd863b3ca2b4300ec061366cf68c3e4ad9edaa34fb40deea03cc23a05f442aa341e9171f47313f19bd588f9bec6c505a396286
   languageName: node
   linkType: hard
 

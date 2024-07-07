@@ -1,3 +1,4 @@
+import crashlytics from '@react-native-firebase/crashlytics';
 import {isAxiosError} from 'axios';
 import {useFetcher} from 'netwrap';
 import {useState} from 'react';
@@ -19,6 +20,9 @@ const useGetNews = () => {
         newsHelper.path,
       );
     },
+    onStartQuery: () => {
+      crashlytics().log('Getting news');
+    },
     onSuccess: ({data}) => {
       if (data.status !== 'ok') {
         throw new Error(data.message);
@@ -30,9 +34,16 @@ const useGetNews = () => {
     onError(error) {
       if (isAxiosError<BaseNewsErrorResponse>(error)) {
         setErrorMessage(error.response?.data.message);
+        try {
+          throw new Error(error.response?.data.message);
+          // eslint-disable-next-line no-catch-shadow
+        } catch (error) {
+          crashlytics().recordError(error as Error);
+        }
       } else if (Utils.isError(error)) {
         const finalError = error as Error;
         setErrorMessage(finalError.message);
+        crashlytics().recordError(finalError);
       }
     },
   });
