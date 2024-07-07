@@ -4,7 +4,11 @@ import {Stack} from './lib';
 
 const Base = () => {
   return (
-    <Stack.Navigator initialRouteName="NewsListScreen">
+    <Stack.Navigator
+      initialRouteName="NewsListScreen"
+      screenOptions={{
+        headerShown: false,
+      }}>
       <Stack.Screen name="NewsListScreen" component={Screens.NewsList} />
     </Stack.Navigator>
   );
