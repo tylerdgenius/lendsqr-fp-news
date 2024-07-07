@@ -1,10 +1,11 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import hooks from '../hooks';
+import {SignupTwoScreenProps} from '../types';
 import Components from '../components';
-import {LoginProps} from '../types';
+import {RFValue} from 'react-native-responsive-fontsize';
+import hooks from '../hooks';
 
-const Login = ({navigation}: LoginProps) => {
+const SignupTwo = ({navigation}: SignupTwoScreenProps) => {
   hooks.useGoogleSignin();
 
   return (
@@ -14,13 +15,12 @@ const Login = ({navigation}: LoginProps) => {
   );
 };
 
-export default Login;
+export default SignupTwo;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    paddingHorizontal: RFValue(12),
     backgroundColor: 'white',
+    flex: 1,
   },
 });

@@ -2,9 +2,9 @@ import crashlytics from '@react-native-firebase/crashlytics';
 import {isAxiosError} from 'axios';
 import {useFetcher} from 'netwrap';
 import {useState} from 'react';
-import Config from '../../config';
-import {BaseNewsErrorResponse, GetAllNewsResponse, News} from '../../types';
-import Utils from '../../utils';
+import Config from '../config';
+import {BaseNewsErrorResponse, GetAllNewsResponse, News} from '../types';
+import Utils from '../utils';
 
 const useGetNews = () => {
   const [news, setNews] = useState<News[]>([]);

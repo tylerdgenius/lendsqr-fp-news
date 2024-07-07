@@ -8,7 +8,7 @@ export type SignupOneScreenProps = NativeStackScreenProps<
 
 export type SignupTwoScreenProps = NativeStackScreenProps<
   RootStackParamsList,
-  'SignupOneScreen'
+  'SignupTwoScreen'
 >;
 
 export type NewsListScreenProps = NativeStackScreenProps<
@@ -19,4 +19,9 @@ export type NewsListScreenProps = NativeStackScreenProps<
 export type NewsDetailsScreenProps = NativeStackScreenProps<
   RootStackParamsList,
   'NewsDetailsScreen'
+>;
+
+export type LoginProps = NativeStackScreenProps<
+  RootStackParamsList,
+  'LoginScreen'
 >;

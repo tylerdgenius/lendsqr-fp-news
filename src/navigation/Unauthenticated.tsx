@@ -8,8 +8,10 @@ const Unauthenticated = () => {
       initialRouteName="SignupOneScreen"
       screenOptions={{
         headerShown: false,
+        animation: 'simple_push',
       }}>
       <Stack.Screen name="SignupOneScreen" component={Screens.SignupOne} />
+      <Stack.Screen name="SignupTwoScreen" component={Screens.SignupTwo} />
       <Stack.Screen name="LoginScreen" component={Screens.Login} />
     </Stack.Navigator>
   );

@@ -3,15 +3,15 @@ import {FlatList, StyleSheet, TouchableOpacity, View} from 'react-native';
 import Wrappers from '../wrappers';
 import Components from '../components';
 import {RFValue} from 'react-native-responsive-fontsize';
-import lib from '../lib';
 import {NewsListScreenProps} from '../types';
+import hooks from '../hooks';
 
 const EmptyNewsList = () => {
   return <></>;
 };
 
 const NewsList = ({navigation}: NewsListScreenProps) => {
-  const {trigger, data} = lib.News.useGetNews();
+  const {trigger, data} = hooks.useGetNews();
 
   useEffect(() => {
     trigger();

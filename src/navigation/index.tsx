@@ -34,7 +34,7 @@ const Entry = () => {
 
         routeNameRef.current = currentRouteName;
       }}>
-      {!user.email || !user.id ? <Base /> : <Unauthenticated />}
+      {user.email || user.id ? <Base /> : <Unauthenticated />}
     </NavigationContainer>
   );
 };

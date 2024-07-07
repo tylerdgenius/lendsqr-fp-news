@@ -4,7 +4,7 @@ import {InitialUserState, User} from '../../types';
 const initialState: InitialUserState = {
   user: {
     email: '',
-    id: 0,
+    id: '',
     pictureUrl: '',
     username: '',
   },

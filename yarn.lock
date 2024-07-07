@@ -2401,6 +2401,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@react-native-google-signin/google-signin@npm:^12.2.1":
+  version: 12.2.1
+  resolution: "@react-native-google-signin/google-signin@npm:12.2.1"
+  peerDependencies:
+    expo: ">=50.0.0"
+    react: "*"
+    react-dom: "*"
+    react-native: "*"
+  peerDependenciesMeta:
+    expo:
+      optional: true
+    react-dom:
+      optional: true
+  checksum: 214a51d4b98a74b3f8f26aaf2882d95d37592aebfc59f2c65619234f64aa545a72a7ba3b2cb19eebf02312758ec0f6c12c5fe801bb3da613bf79d9914f247dac
+  languageName: node
+  linkType: hard
+
 "@react-native/assets-registry@npm:0.74.85":
   version: 0.74.85
   resolution: "@react-native/assets-registry@npm:0.74.85"
@@ -7216,6 +7233,7 @@ __metadata:
     "@react-native-firebase/auth": ^20.1.0
     "@react-native-firebase/crashlytics": ^20.1.0
     "@react-native-firebase/firestore": ^20.1.0
+    "@react-native-google-signin/google-signin": ^12.2.1
     "@react-native/babel-preset": 0.74.85
     "@react-native/eslint-config": 0.74.85
     "@react-native/metro-config": 0.74.85
@@ -7237,7 +7255,6 @@ __metadata:
     react: 18.2.0
     react-native: 0.74.3
     react-native-code-push: ^8.2.2
-    react-native-google-signin: ^2.1.1
     react-native-responsive-fontsize: ^0.5.1
     react-native-safe-area-context: ^4.10.7
     react-native-screens: ^3.32.0
@@ -8793,17 +8810,6 @@ __metadata:
     semver: ^7.3.5
     xcode: 3.0.1
   checksum: 6d1263c65cd66ab04ffca1df718b89fe8f04c64a55acd4f654ec3ab178d16b81152e0e371e459b552a37d0aeb5703873fefa117677a564f334f433a1902a73e6
-  languageName: node
-  linkType: hard
-
-"react-native-google-signin@npm:^2.1.1":
-  version: 2.1.1
-  resolution: "react-native-google-signin@npm:2.1.1"
-  peerDependencies:
-    prop-types: ^15.5.10
-    react: ">=15.4.0 || ^16.0.0-alpha"
-    react-native: ">=0.40"
-  checksum: 446e5014eef9fa87d206b1d69fa603fd73c564f613df3ef92aca10d645142e423cbdbc5e3acd9323ac2887f91283f463574eeef1150004ac2ac7f922b48e8522
   languageName: node
   linkType: hard
 

@@ -8,6 +8,7 @@ const Base = () => {
       initialRouteName="NewsListScreen"
       screenOptions={{
         headerShown: false,
+        animation: 'fade_from_bottom',
       }}>
       <Stack.Screen name="NewsListScreen" component={Screens.NewsList} />
       <Stack.Screen name="NewsDetailsScreen" component={Screens.NewsDetails} />

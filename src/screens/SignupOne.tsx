@@ -1,10 +1,11 @@
 import React, {useState} from 'react';
-import {Alert, StyleSheet, View} from 'react-native';
+import {Alert, StyleSheet, TouchableOpacity, View} from 'react-native';
 import {RFValue} from 'react-native-responsive-fontsize';
 import Components from '../components';
 import StyledComponents from '../styledComponents';
 import {SignupOneScreenProps} from '../types';
 import Wrappers from '../wrappers';
+import Text from '../styledComponents/Text';
 
 const SignupOne = ({navigation}: SignupOneScreenProps) => {
   const [firstName, setFirstName] = useState('');
@@ -78,6 +79,15 @@ const SignupOne = ({navigation}: SignupOneScreenProps) => {
           <StyledComponents.Button onPress={handleNavigation}>
             Continue
           </StyledComponents.Button>
+          <View style={styles.loginLink}>
+            <Text>Got a google account?</Text>
+            <TouchableOpacity
+              onPress={() => navigation.navigate('LoginScreen')}>
+              <Text variant="bold" style={styles.loginText}>
+                Login
+              </Text>
+            </TouchableOpacity>
+          </View>
         </View>
       </View>
     </Wrappers.KeyboardDismiss>
@@ -105,5 +115,15 @@ const styles = StyleSheet.create({
   },
   topSpacer: {
     marginTop: RFValue(30),
+  },
+  loginLink: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: RFValue(8),
+    justifyContent: 'center',
+    marginTop: RFValue(8),
+  },
+  loginText: {
+    color: '#ba000d',
   },
 });
