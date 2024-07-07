@@ -1,5 +1,5 @@
 export type ScreenHeaderProps = {
-  title: string;
+  title?: string;
   backButton?: () => void;
   description?: string;
   backButtonType?: 'cancel' | 'back';

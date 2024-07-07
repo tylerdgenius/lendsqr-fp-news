@@ -4,7 +4,7 @@ import {RFValue} from 'react-native-responsive-fontsize';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {
   default as FontAwesome5Icon,
-  default as FontAwesomeIcons,
+  default as FontAwesomeIcon,
 } from 'react-native-vector-icons/FontAwesome5';
 import {ScreenHeaderProps} from '../types';
 
@@ -16,20 +16,20 @@ const ScreenHeader = ({
 }: ScreenHeaderProps) => {
   const {top} = useSafeAreaInsets();
 
-  const iconSize = RFValue(10);
+  const iconSize = RFValue(15);
 
   return (
     <View style={[{paddingTop: top + RFValue(10)}]}>
       {backButton && (
         <TouchableOpacity onPress={backButton}>
           {backButtonType === 'back' ? (
-            <FontAwesomeIcons name="close" size={iconSize} />
+            <FontAwesomeIcon name="arrow-left" size={iconSize} />
           ) : (
-            <FontAwesome5Icon name="arrow-left" size={iconSize} />
+            <FontAwesome5Icon name="close" size={iconSize} />
           )}
         </TouchableOpacity>
       )}
-      <Text style={styles.title}>{title}</Text>
+      {title && <Text style={styles.title}>{title}</Text>}
       {description && <Text style={styles.description}>{description}</Text>}
     </View>
   );

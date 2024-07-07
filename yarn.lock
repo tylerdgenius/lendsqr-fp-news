@@ -7230,7 +7230,9 @@ __metadata:
     babel-jest: ^29.6.3
     eslint: ^8.19.0
     jest: ^29.6.3
+    moment: ^2.30.1
     netwrap: ^3.0.2
+    normal-case-generator: ^1.0.1
     prettier: 2.8.8
     react: 18.2.0
     react-native: 0.74.3
@@ -7242,6 +7244,7 @@ __metadata:
     react-native-vector-icons: ^10.1.0
     react-redux: ^9.1.2
     react-test-renderer: 18.2.0
+    text-shortener: ^1.0.4
     typescript: 5.0.4
   languageName: unknown
   linkType: soft
@@ -7884,6 +7887,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"moment@npm:^2.30.1":
+  version: 2.30.1
+  resolution: "moment@npm:2.30.1"
+  checksum: 859236bab1e88c3e5802afcf797fc801acdbd0ee509d34ea3df6eea21eb6bcc2abd4ae4e4e64aa7c986aa6cba563c6e62806218e6412a765010712e5fa121ba6
+  languageName: node
+  linkType: hard
+
 "ms@npm:2.0.0":
   version: 2.0.0
   resolution: "ms@npm:2.0.0"
@@ -8052,6 +8062,13 @@ __metadata:
   bin:
     nopt: bin/nopt.js
   checksum: 6fa729cc77ce4162cfad8abbc9ba31d4a0ff6850c3af61d59b505653bef4781ec059f8890ecfe93ee8aa0c511093369cca88bfc998101616a2904e715bbbb7c9
+  languageName: node
+  linkType: hard
+
+"normal-case-generator@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "normal-case-generator@npm:1.0.1"
+  checksum: 32e8060fff1f77e6392fe6c420f07e9f4c8aea5ad0457a9776d81a720046b43cc6aab420a5ef41e6b70f361a5a40842a4b5125133db5cb26408106d8b0d8994b
   languageName: node
   linkType: hard
 
@@ -10090,6 +10107,13 @@ __metadata:
     glob: ^7.1.4
     minimatch: ^3.0.4
   checksum: 3b34a3d77165a2cb82b34014b3aba93b1c4637a5011807557dc2f3da826c59975a5ccad765721c4648b39817e3472789f9b0fa98fc854c5c1c7a1e632aacdc28
+  languageName: node
+  linkType: hard
+
+"text-shortener@npm:^1.0.4":
+  version: 1.0.4
+  resolution: "text-shortener@npm:1.0.4"
+  checksum: 4af6820a54cfccb213485c714a61604f5cde0291836c31861c95729c722abc9ed6cf56aefa2b26158ed5cb6e2d76895beab7d2243272d1852de101b7b802a5c0
   languageName: node
   linkType: hard
 

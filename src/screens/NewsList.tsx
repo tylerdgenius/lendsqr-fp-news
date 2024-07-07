@@ -1,11 +1,48 @@
-import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import React, {useEffect} from 'react';
+import {FlatList, StyleSheet, TouchableOpacity, View} from 'react-native';
+import Wrappers from '../wrappers';
+import Components from '../components';
+import {RFValue} from 'react-native-responsive-fontsize';
+import lib from '../lib';
+import {NewsListScreenProps} from '../types';
 
-const NewsList = () => {
+const EmptyNewsList = () => {
+  return <></>;
+};
+
+const NewsList = ({navigation}: NewsListScreenProps) => {
+  const {trigger, data} = lib.News.useGetNews();
+
+  useEffect(() => {
+    trigger();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
-    <View style={styles.container}>
-      <Text>NewsList</Text>
-    </View>
+    <Wrappers.KeyboardDismiss>
+      <View style={styles.container}>
+        <Components.ScreenHeader title="Headlines" />
+        <View style={styles.spacer} />
+        <FlatList
+          showsVerticalScrollIndicator={false}
+          data={data.news}
+          renderItem={({item}) => {
+            return (
+              <>
+                <TouchableOpacity
+                  onPress={() => {
+                    navigation.navigate('NewsDetailsScreen', item);
+                  }}>
+                  <Components.NewsCard {...item} />
+                </TouchableOpacity>
+                <View style={styles.spacer} />
+              </>
+            );
+          }}
+          ListEmptyComponent={EmptyNewsList}
+        />
+      </View>
+    </Wrappers.KeyboardDismiss>
   );
 };
 
@@ -14,7 +51,11 @@ export default NewsList;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    paddingHorizontal: RFValue(15),
+    paddingBottom: RFValue(20),
+    backgroundColor: 'white',
+  },
+  spacer: {
+    marginBottom: RFValue(20),
   },
 });
