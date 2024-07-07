@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
   filledButton: {
-    backgroundColor: 'red',
+    backgroundColor: '#ba000d',
     justifyContent: 'center',
     alignItems: 'center',
     paddingVertical: RFValue(15),

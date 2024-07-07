@@ -1,12 +1,23 @@
 import React from 'react';
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Image, Linking, StyleSheet, Text, View} from 'react-native';
 import {NewsDetailsScreenProps} from '../types';
 import Components from '../components';
 import {RFValue} from 'react-native-responsive-fontsize';
 import StyledComponents from '../styledComponents';
+import moment from 'moment';
+import Utils from '../utils';
 
 const NewsDetails = ({navigation, route}: NewsDetailsScreenProps) => {
-  const {urlToImage, title, content, description} = route.params;
+  const {
+    urlToImage,
+    title,
+    content,
+    description,
+    url,
+    publishedAt,
+    author,
+    source,
+  } = route.params;
 
   return (
     <View style={styles.container}>
@@ -24,10 +35,25 @@ const NewsDetails = ({navigation, route}: NewsDetailsScreenProps) => {
       <View>
         <Text style={styles.title}>{title}</Text>
         <View style={styles.divider} />
-        <Text>{content ? content : description}</Text>
+        <Text style={styles.content}>{content ? content : description}</Text>
       </View>
       <View style={styles.bottomSection}>
-        <StyledComponents.Button>Read Full Article</StyledComponents.Button>
+        <Text style={styles.source}>Source:</Text>
+        <Text style={styles.sourceDetails}>{source.name}</Text>
+        <View style={styles.spacer} />
+        <View style={styles.dateWrapper}>
+          <Text style={styles.date}>
+            {moment(publishedAt).format('MMM Do, YYYY')}
+          </Text>
+
+          <View style={styles.nameWrapper}>
+            <Text style={styles.name}>{Utils.getInitials(author)}</Text>
+          </View>
+        </View>
+        <View style={styles.spacer} />
+        <StyledComponents.Button onPress={() => Linking.openURL(url)}>
+          Read Full Article
+        </StyledComponents.Button>
       </View>
     </View>
   );
@@ -62,5 +88,34 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'flex-end',
     paddingBottom: RFValue(30),
+  },
+  content: {
+    fontSize: RFValue(14),
+  },
+  nameWrapper: {
+    backgroundColor: '#ba000d',
+    width: 40,
+    height: 40,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 20,
+  },
+  name: {
+    color: 'white',
+  },
+  date: {
+    fontWeight: '700',
+    color: '#bdbdbd',
+  },
+  source: {
+    color: '#bdbdbd',
+  },
+  sourceDetails: {
+    fontWeight: '700',
+  },
+  dateWrapper: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
 });
