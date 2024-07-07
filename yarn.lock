@@ -2353,6 +2353,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@react-native-firebase/auth@npm:^20.1.0":
+  version: 20.1.0
+  resolution: "@react-native-firebase/auth@npm:20.1.0"
+  dependencies:
+    plist: ^3.1.0
+  peerDependencies:
+    "@react-native-firebase/app": 20.1.0
+    expo: ">=47.0.0"
+  peerDependenciesMeta:
+    expo:
+      optional: true
+  checksum: 44d5897c938a24dd67a57b95759e03679ebc11ffe6d907ac110974d8ebf719c68bcdf42fb9c2759ffa34c74bcb032de35df98a4dd0a3a824f223b4f535f93abe
+  languageName: node
+  linkType: hard
+
 "@react-native-firebase/firestore@npm:^20.1.0":
   version: 20.1.0
   resolution: "@react-native-firebase/firestore@npm:20.1.0"
@@ -7154,6 +7169,7 @@ __metadata:
     "@babel/preset-env": ^7.20.0
     "@babel/runtime": ^7.20.0
     "@react-native-firebase/app": ^20.1.0
+    "@react-native-firebase/auth": ^20.1.0
     "@react-native-firebase/firestore": ^20.1.0
     "@react-native/babel-preset": 0.74.85
     "@react-native/eslint-config": 0.74.85
@@ -8438,7 +8454,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"plist@npm:^3.0.4, plist@npm:^3.0.5":
+"plist@npm:^3.0.4, plist@npm:^3.0.5, plist@npm:^3.1.0":
   version: 3.1.0
   resolution: "plist@npm:3.1.0"
   dependencies:
