@@ -7091,6 +7091,7 @@ __metadata:
     babel-jest: ^29.6.3
     eslint: ^8.19.0
     jest: ^29.6.3
+    netwrap: ^3.0.2
     prettier: 2.8.8
     react: 18.2.0
     react-native: 0.74.3
@@ -7794,6 +7795,16 @@ __metadata:
   version: 2.0.2
   resolution: "netmask@npm:2.0.2"
   checksum: c65cb8d3f7ea5669edddb3217e4c96910a60d0d9a4b52d9847ff6b28b2d0277cd8464eee0ef85133cdee32605c57940cacdd04a9a019079b091b6bba4cb0ec22
+  languageName: node
+  linkType: hard
+
+"netwrap@npm:^3.0.2":
+  version: 3.0.2
+  resolution: "netwrap@npm:3.0.2"
+  peerDependencies:
+    react: ^16.8.0 || <19.0.0
+    react-dom: ^16.8.0 || <19.0.0
+  checksum: 17835cb794afc49d9ea52dc842de6adf3c46a6d905a922326178c90f5c71525140c61bcde374bb2a6274efead0ad155174201259f1b4c43057bba202c1113656
   languageName: node
   linkType: hard
 
