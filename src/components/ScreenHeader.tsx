@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {StyleSheet, TouchableOpacity, View} from 'react-native';
 import {RFValue} from 'react-native-responsive-fontsize';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {
@@ -7,6 +7,7 @@ import {
   default as FontAwesomeIcon,
 } from 'react-native-vector-icons/FontAwesome5';
 import {ScreenHeaderProps} from '../types';
+import StyledComponents from '../styledComponents';
 
 const ScreenHeader = ({
   title,
@@ -29,8 +30,16 @@ const ScreenHeader = ({
           )}
         </TouchableOpacity>
       )}
-      {title && <Text style={styles.title}>{title}</Text>}
-      {description && <Text style={styles.description}>{description}</Text>}
+      {title && (
+        <StyledComponents.Text variant="bold" style={styles.title}>
+          {title}
+        </StyledComponents.Text>
+      )}
+      {description && (
+        <StyledComponents.Text style={styles.description}>
+          {description}
+        </StyledComponents.Text>
+      )}
     </View>
   );
 };
@@ -39,7 +48,7 @@ export default ScreenHeader;
 
 const styles = StyleSheet.create({
   title: {
-    fontSize: RFValue(30),
+    fontSize: RFValue(20),
   },
   description: {},
 });

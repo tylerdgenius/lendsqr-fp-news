@@ -1,7 +1,8 @@
 import React from 'react';
-import {StyleSheet, Text, TextInput, View} from 'react-native';
+import {StyleSheet, TextInput, View} from 'react-native';
 import {RFValue} from 'react-native-responsive-fontsize';
 import {InputProps} from '../types';
+import Text from './Text';
 
 const Input = ({
   label,
@@ -12,7 +13,7 @@ const Input = ({
 }: InputProps) => {
   return (
     <View {...containerProps}>
-      <Text style={styles.text} {...labelProps}>
+      <Text variant="regular" style={styles.text} {...labelProps}>
         {label}
       </Text>
       <View style={styles.spacer} />

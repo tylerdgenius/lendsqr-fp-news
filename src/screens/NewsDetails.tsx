@@ -1,5 +1,5 @@
 import React from 'react';
-import {Image, Linking, StyleSheet, Text, View} from 'react-native';
+import {Image, Linking, StyleSheet, View} from 'react-native';
 import {NewsDetailsScreenProps} from '../types';
 import Components from '../components';
 import {RFValue} from 'react-native-responsive-fontsize';
@@ -32,22 +32,33 @@ const NewsDetails = ({navigation, route}: NewsDetailsScreenProps) => {
         style={styles.image}
       />
       <View style={styles.spacer} />
+
       <View>
-        <Text style={styles.title}>{title}</Text>
+        <StyledComponents.Text variant="bold" style={styles.title}>
+          {title}
+        </StyledComponents.Text>
         <View style={styles.divider} />
-        <Text style={styles.content}>{content ? content : description}</Text>
+        <StyledComponents.Text style={styles.content}>
+          {content ? content : description}
+        </StyledComponents.Text>
       </View>
       <View style={styles.bottomSection}>
-        <Text style={styles.source}>Source:</Text>
-        <Text style={styles.sourceDetails}>{source.name}</Text>
+        <StyledComponents.Text style={styles.source}>
+          Source:
+        </StyledComponents.Text>
+        <StyledComponents.Text style={styles.sourceDetails}>
+          {source.name}
+        </StyledComponents.Text>
         <View style={styles.spacer} />
         <View style={styles.dateWrapper}>
-          <Text style={styles.date}>
+          <StyledComponents.Text style={styles.date}>
             {moment(publishedAt).format('MMM Do, YYYY')}
-          </Text>
+          </StyledComponents.Text>
 
           <View style={styles.nameWrapper}>
-            <Text style={styles.name}>{Utils.getInitials(author)}</Text>
+            <StyledComponents.Text style={styles.name}>
+              {Utils.getInitials(author)}
+            </StyledComponents.Text>
           </View>
         </View>
         <View style={styles.spacer} />

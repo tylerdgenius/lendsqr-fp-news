@@ -1,9 +1,11 @@
 import React from 'react';
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, View} from 'react-native';
 import {News} from '../types';
 import {RFValue} from 'react-native-responsive-fontsize';
 import {truncateText} from 'text-shortener';
 import moment from 'moment';
+import Utils from '../utils';
+import StyledComponents from '../styledComponents';
 
 const NewsCard = ({
   title,
@@ -12,14 +14,6 @@ const NewsCard = ({
   description,
   author,
 }: News) => {
-  const getInitials = (_author: string) => {
-    if (!author) return '-';
-
-    const text = author.split(' ');
-
-    return `${text[0].slice(0)[0]}${text[1] ? text[1].slice(0)[0] : ''}`;
-  };
-
   return (
     <View style={styles.container}>
       <Image
@@ -32,19 +26,23 @@ const NewsCard = ({
         borderRadius={RFValue(10)}
       />
       <View style={styles.textContainer}>
-        <Text style={styles.text}>{truncateText(title, 58)}</Text>
+        <StyledComponents.Text variant="bold" style={styles.text}>
+          {truncateText(title, 58)}
+        </StyledComponents.Text>
         <View style={styles.textSpacer} />
-        <Text style={styles.description}>
+        <StyledComponents.Text style={styles.description}>
           {truncateText(description ? description : '', 100)}
-        </Text>
+        </StyledComponents.Text>
         <View style={styles.textSpacer} />
 
         <View style={styles.bottomSection}>
-          <Text style={styles.date}>
+          <StyledComponents.Text style={styles.date}>
             {moment(publishedAt).format('MMM Do, YYYY')}
-          </Text>
+          </StyledComponents.Text>
           <View style={styles.nameWrapper}>
-            <Text style={styles.name}>{getInitials(author)}</Text>
+            <StyledComponents.Text style={styles.name}>
+              {Utils.getInitials(author)}
+            </StyledComponents.Text>
           </View>
         </View>
       </View>
@@ -59,6 +57,8 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     borderRadius: RFValue(10),
     padding: RFValue(5),
+    borderWidth: 1,
+    borderColor: '#f7f7f7',
   },
   textContainer: {
     padding: RFValue(15),

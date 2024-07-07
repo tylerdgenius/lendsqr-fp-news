@@ -1,6 +1,6 @@
 import {
   TextInputProps,
-  TextProps,
+  TextProps as RNTextProps,
   TouchableOpacityProps,
   ViewProps,
 } from 'react-native';
@@ -8,12 +8,16 @@ import {
 export type InputProps = {
   label: string;
   variant?: 'filled' | 'outline';
-  labelProps?: TextProps;
+  labelProps?: RNTextProps;
   containerProps?: ViewProps;
 } & TextInputProps;
 
 export type ButtonProps = {
   variant?: 'filled' | 'outline';
-  textProps?: TextProps;
+  textProps?: RNTextProps;
   children?: React.ReactNode;
 } & TouchableOpacityProps;
+
+export type TextProps = {
+  variant?: 'bold' | 'medium' | 'light' | 'regular' | 'semibold';
+} & RNTextProps;

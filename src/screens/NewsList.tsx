@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingHorizontal: RFValue(15),
     paddingBottom: RFValue(20),
-    backgroundColor: 'white',
+    backgroundColor: '#eeeeee',
   },
   spacer: {
     marginBottom: RFValue(20),

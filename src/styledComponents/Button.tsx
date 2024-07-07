@@ -1,7 +1,8 @@
 import React from 'react';
-import {StyleSheet, Text, TouchableOpacity} from 'react-native';
+import {StyleSheet, TouchableOpacity} from 'react-native';
 import {RFValue} from 'react-native-responsive-fontsize';
 import {ButtonProps} from '../types';
+import Text from './Text';
 
 const Button = ({
   children,
@@ -15,6 +16,7 @@ const Button = ({
       {...rest}>
       {typeof children === 'string' ? (
         <Text
+          variant="regular"
           style={variant === 'filled' ? styles.filledText : styles.outlinedText}
           {...textProps}>
           {children}
