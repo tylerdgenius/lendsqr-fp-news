@@ -1,7 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text, TextInput, View} from 'react-native';
 import {RFValue} from 'react-native-responsive-fontsize';
-import theme from '../theme';
 import {InputProps} from '../types';
 
 const Input = ({
@@ -18,7 +17,7 @@ const Input = ({
       </Text>
       <View style={styles.spacer} />
       <TextInput
-        style={variant === 'filled' ? theme.filledInput : theme.outlinedInput}
+        style={variant === 'filled' ? styles.filledInput : styles.outlinedInput}
         placeholderTextColor="#c7c7c7"
         {...rest}
       />
@@ -35,4 +34,13 @@ const styles = StyleSheet.create({
   text: {
     fontWeight: '600',
   },
+  filledInput: {
+    backgroundColor: '#f5f5f5',
+    color: '#777',
+    borderRadius: RFValue(5),
+    borderWidth: 0.5,
+    borderColor: '#c7c7c8',
+    paddingHorizontal: RFValue(15),
+  },
+  outlinedInput: {},
 });

@@ -1,7 +1,5 @@
-import Button from './Button';
-import Input from './Input';
+import ScreenHeader from './ScreenHeader';
 
 export default {
-  Input,
-  Button,
+  ScreenHeader,
 };
