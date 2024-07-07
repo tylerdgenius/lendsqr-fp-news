@@ -10,6 +10,7 @@ const Base = () => {
         headerShown: false,
       }}>
       <Stack.Screen name="NewsListScreen" component={Screens.NewsList} />
+      <Stack.Screen name="NewsDetailsScreen" component={Screens.NewsDetails} />
     </Stack.Navigator>
   );
 };
