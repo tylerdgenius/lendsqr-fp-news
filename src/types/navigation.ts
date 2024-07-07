@@ -1,7 +1,12 @@
 export type RootStackParamsList = {
   LoginScreen: undefined;
   SignupOneScreen: undefined;
-  SignupTwoScreen: undefined;
+  SignupTwoScreen: {
+    email: string;
+    lastName: string;
+    firstName: string;
+    phoneNumber: string;
+  };
   NewsListScreen: undefined;
   NewsDetailsScreen: undefined;
 };

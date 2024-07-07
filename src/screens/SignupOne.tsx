@@ -1,5 +1,5 @@
-import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import React, {useState} from 'react';
+import {Alert, StyleSheet, View} from 'react-native';
 import {RFValue} from 'react-native-responsive-fontsize';
 import Components from '../components';
 import StyledComponents from '../styledComponents';
@@ -7,6 +7,38 @@ import {SignupOneScreenProps} from '../types';
 import Wrappers from '../wrappers';
 
 const SignupOne = ({navigation}: SignupOneScreenProps) => {
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [email, setEmail] = useState('');
+
+  const handleNavigation = () => {
+    try {
+      if (!firstName) {
+        throw new Error('First Name is required');
+      }
+      if (!lastName) {
+        throw new Error('Last Name is required');
+      }
+      if (!phoneNumber) {
+        throw new Error('Phone Number is required');
+      }
+      if (!email) {
+        throw new Error('Email Address is required');
+      }
+
+      navigation.navigate('SignupTwoScreen', {
+        firstName,
+        lastName,
+        email,
+        phoneNumber,
+      });
+    } catch (error) {
+      const finalError = error as Error;
+      Alert.alert('Error', finalError.message);
+    }
+  };
+
   return (
     <Wrappers.KeyboardDismiss>
       <View style={[styles.container]}>
@@ -18,22 +50,32 @@ const SignupOne = ({navigation}: SignupOneScreenProps) => {
         <StyledComponents.Input
           label="First Name"
           placeholder="Enter your first name"
+          value={firstName}
+          onChangeText={setFirstName}
         />
         <View style={styles.spacer} />
         <StyledComponents.Input
           label="Last Name"
           placeholder="Enter your last name"
+          value={lastName}
+          onChangeText={setLastName}
         />
         <View style={styles.spacer} />
         <StyledComponents.Input
           label="Phone Number"
           placeholder="Enter your phone number"
+          value={phoneNumber}
+          onChangeText={setPhoneNumber}
         />
         <View style={styles.spacer} />
-        <StyledComponents.Input label="Email" placeholder="Enter your email" />
+        <StyledComponents.Input
+          label="Email"
+          placeholder="Enter your email"
+          value={email}
+          onChangeText={setEmail}
+        />
         <View style={styles.bottomButton}>
-          <StyledComponents.Button
-            onPress={() => navigation.navigate('SignupTwoScreen')}>
+          <StyledComponents.Button onPress={handleNavigation}>
             Continue
           </StyledComponents.Button>
         </View>
